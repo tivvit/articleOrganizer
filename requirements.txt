@@ -1,0 +1,6 @@
+pyYAML
+ujson
+lmdb
+beautifulsoup4
+scholarly
+Flask
