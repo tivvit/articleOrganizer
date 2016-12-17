@@ -1,5 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Paper examiner</title>
+</head>
+
+<body>
 <ul>
-{% for key in entries %}
-    <li>{{ entries[key]["title"] }}</li>
-{% endfor %}
+    {% for key, paper in entries %}
+        <li id="{{ key }}">
+            <h1>{{ paper["scholar"]["bib"]["title"] }}</h1>
+            <h2>{{ paper["scholar"]["bib"]["author"] }}</h2>
+
+            <a href="pdf/{{ paper['pdf'] }}" target="_blank">PDF</a>
+            <a href="html/{{ key }}.html" target="_blank">HTML</a>
+            {% if "url" in paper["scholar"]["bib"] %}
+            <a href="{{ paper['scholar']['bib']['url'] }}" target="_blank">url</a>
+            {% endif %}
+            <a href="{{ paper['scholar']['url_scholarbib'] }}" target="_blank">scholar</a>
+            <a href="https://scholar.google.cz/scholar?q={{ paper["scholar"]["bib"]["title"] }}" target="_blank">scholar search</a>
+            <span class="citedby">{{ paper["scholar"]["citedby"] }}</span>
+        </li>
+    {% endfor %}
 </ul>
+</body>
+
+</html>

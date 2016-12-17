@@ -19,7 +19,7 @@ convertor = Convertor(cfg)
 def process_file(f):
     checksum = Storage.file_checksum(f)
     if checksum in db.data:
-        print("file {} already processed".format(f))
+        print("file {} already processed ({})".format(f, checksum))
         return
     db.store(checksum, {"pdf": f})
     convertor.convert(f)
@@ -27,6 +27,7 @@ def process_file(f):
 
 for f in finder.find_all():
     process_file(f)
+    db.load()
 
 
 for f in glob.glob(os.path.join(cfg["html_out"], "*.html")):

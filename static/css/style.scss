@@ -1,0 +1,28 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding: .6em .4em;
+    border-radius: .3em;
+
+    &:nth-child(even) {
+      background: #CCC;
+    }
+  }
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.citedby {
+}
