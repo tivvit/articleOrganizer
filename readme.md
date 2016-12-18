@@ -8,11 +8,11 @@ containing titles and authors.
 
 ### Structure
 1. All *.pdf files are found in `srcdir`
-2. Those files are converted to html with great library - https://github
-.com/coolwanglu/pdf2htmlEX (because PDF is not good for parsing)
+2. Those files are converted to html with great library - <https://github
+.com/coolwanglu/pdf2htmlEX> (because PDF is not good for parsing)
 3. Most probable title is found in the file
-4. The article is found at scholar.google.com based on the title and the result
- is saved to LMDB
+4. The article is found at <https://scholar.google.com> based on the title and 
+the result is saved to LMDB
 5. Stored results are presented by flask web page
 
 ## Disclaimer !!!
@@ -30,7 +30,7 @@ Please report all problems as [Github issues](https://github.com/tivvit/articleO
  
 ##### Without docker
  - You are on your own here (consult Dockerfile)
-    - project is based on https://github.com/coolwanglu/pdf2htmlEX
+    - project is based on <https://github.com/coolwanglu/pdf2htmlEX>
     - python3 (pip3 install -r requirements.txt)
     - analyze papers `python3 main.py`
     - run web server `python3 web.py`
