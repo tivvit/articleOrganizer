@@ -12,4 +12,4 @@ ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 ENV FLASK_APP web.py
 ENV FLASK_DEBUG 1
 
-CMD flask run --host=0.0.0.0
+CMD python3 web.py
