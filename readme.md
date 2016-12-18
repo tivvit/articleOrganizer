@@ -1,4 +1,4 @@
-# Paper organizer
+# Article organizer
 
 Did you ever search for scientific paper downloaded before and you can't 
 find it because it was downloaded as `dsjkgqwtqoy843175.pdf`?
