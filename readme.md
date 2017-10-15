@@ -38,6 +38,9 @@ Please report all problems as [Github issues](https://github.com/tivvit/articleO
 Edit `conf.yaml`
 - `srcdir`: directory with articles
 
+## Reading
+* Check my other project for fast PDF reading (https://github.com/tivvit/pdf-book-reader)
+
 ## Todo
  - add keywords
  - toggle abstract
