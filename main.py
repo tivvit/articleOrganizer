@@ -18,11 +18,12 @@ convertor = Convertor(cfg)
 
 def process_file(f):
     checksum = Storage.file_checksum(f)
+    encoded_file = f.encode('utf8', 'surrogateescape')
     if checksum in db.data:
-        print("file {} already processed ({})".format(f, checksum))
+        print("file {} already processed ({})".format(encoded_file, checksum))
         return
-    db.store(checksum, {"pdf": f})
-    convertor.convert(f)
+    db.store(checksum, {"pdf": encoded_file})
+    convertor.convert(encoded_file)
 
 
 for f in finder.find_all():
@@ -31,8 +32,9 @@ for f in finder.find_all():
 
 
 for f in glob.glob(os.path.join(cfg["html_out"], "*.html")):
-    checksum = f.replace(".html", '').replace("html/", '')
+    checksum = f.replace(".html", '').replace(os.path.join(cfg["html_out"], ""), '')
 
+    #print(os.path.join(cfg["html_out"], ""))
     data = db.data[checksum]
     dirty = False
     # print(data)

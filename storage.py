@@ -29,4 +29,6 @@ class Storage(object):
 
     def store(self, key, data):
         with self.env.begin(write=True) as txn:
+            print(key)
+            print(data)
             txn.put(key.encode("utf-8"), ujson.dumps(data).encode('utf-8'), overwrite=True)

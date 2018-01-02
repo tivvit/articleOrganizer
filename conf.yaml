@@ -1,5 +1,5 @@
 # todo support more dirs
-srcdir: data
+srcdir: /data
 format: "*.pdf"
 database: database
-html_out: html
+html_out: /html

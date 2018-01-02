@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
     - .:/pdf
+    - /mfs/replicated/tech/papers/:/data
     ports:
     - "5050:5000"
     depends_on:
@@ -23,4 +24,6 @@ services:
     build: .
     volumes:
     - .:/pdf
+    - ./html:/html
+    - /mfs/replicated/tech/papers/:/data
     command: python3 main.py

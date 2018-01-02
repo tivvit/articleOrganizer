@@ -24,8 +24,12 @@ def main():
 
 @app.route('/pdf/<path:path>')
 def pdf_proxy(path):
-    folder, file = path.split('/')
-    return send_from_directory(os.path.join(os.getcwd(), folder), file)
+    print(path)
+    splits = path.split('/')
+    folder = splits[:-1]
+    file = splits[-1]
+    folder = '/'.join(folder)
+    return send_from_directory(os.path.join("/data", folder), file)
 
 
 @app.route('/html/<path:path>')
